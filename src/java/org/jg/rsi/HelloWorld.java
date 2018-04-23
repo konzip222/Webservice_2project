@@ -69,7 +69,7 @@ public void modifyEvent(@WebParam(name = "id") int id, @WebParam(name = "name") 
 public void addEvent(@WebParam(name = "name") String name, @WebParam(name = "type") String typeOfEvent,
            @WebParam(name = "day") int day, @WebParam(name = "month") int month, @WebParam(name = "year") int year, @WebParam(name = "description") String description);
 /**
- * This method add Event 
+ * This method gets Imageform webservice 
  * @param  name name of Image
  * @return Image
  */
