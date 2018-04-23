@@ -7,8 +7,6 @@ package org.jg.rsi;
 
 //Service Implementation
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.jws.HandlerChain;
@@ -20,12 +18,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.xml.ws.BindingType;
+import javax.xml.ws.soap.MTOM;
+import javax.xml.ws.soap.SOAPBinding;
 
 
-//@WebService(endpointInterface = "org.jg.rsi.HelloWorld", portName = "portN", serviceName = "ServiceName", targetNamespace = "t_name")
+@MTOM
 @WebService(endpointInterface = "org.jg.rsi.HelloWorld")
+@BindingType(value = SOAPBinding.SOAP11HTTP_MTOM_BINDING)
 @HandlerChain(file="handler-chain.xml")
 
 public class HelloWorldImpl implements HelloWorld  {
