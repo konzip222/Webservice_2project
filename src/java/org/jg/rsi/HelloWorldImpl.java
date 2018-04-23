@@ -187,7 +187,7 @@ public void modifyEvent(int id, String name, String typeOfEvent,
 @Override
 public Image getImageByName(String name){
     try{
-        File image = new File("c:\\temp-images\\" + name);
+        File image = new File("C:\\Users\\Jakub\\Desktop\\STUDIA_INFA_I\\temp-img\\" + name);
         return ImageIO.read(image);
     } catch(IOException e){
         e.printStackTrace();

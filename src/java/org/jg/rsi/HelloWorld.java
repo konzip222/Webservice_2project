@@ -11,17 +11,13 @@ package org.jg.rsi;
  * @author Jakub
  */
 
-import java.util.Calendar;
+import java.awt.Image;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-
 import javax.jws.WebService;
-
 import javax.jws.soap.SOAPBinding;
-
 import javax.jws.soap.SOAPBinding.Style;
-
 import javax.jws.soap.SOAPBinding.Use;
 
 @WebService
@@ -72,4 +68,11 @@ public void modifyEvent(@WebParam(name = "id") int id, @WebParam(name = "name") 
 @WebMethod
 public void addEvent(@WebParam(name = "name") String name, @WebParam(name = "type") String typeOfEvent,
            @WebParam(name = "day") int day, @WebParam(name = "month") int month, @WebParam(name = "year") int year, @WebParam(name = "description") String description);
+/**
+ * This method add Event 
+ * @param  name name of Image
+ * @return Image
+ */
+@WebMethod
+public Image getImageByName(String name);
 }
