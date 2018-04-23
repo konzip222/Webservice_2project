@@ -7,6 +7,9 @@ package org.jg.rsi;
 
 //Service Implementation
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import javax.jws.HandlerChain;
@@ -18,6 +21,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.imageio.ImageIO;
 import javax.xml.ws.BindingType;
 import javax.xml.ws.soap.MTOM;
 import javax.xml.ws.soap.SOAPBinding;
@@ -150,6 +154,7 @@ public List<Events> getEventsOfWeek(int week , int year){
         return resultList;
 }
 
+@Override
 public void modifyEvent(int id, String name, String typeOfEvent,
            int day, int month, int year, String description){
     
@@ -177,5 +182,16 @@ public void modifyEvent(int id, String name, String typeOfEvent,
         catch(SQLException e){
             e.printStackTrace();
         }      
+}
+
+@Override
+public Image getImageByName(String name){
+    try{
+        File image = new File("c:\\temp-images\\" + name);
+        return ImageIO.read(image);
+    } catch(IOException e){
+        e.printStackTrace();
+        return null;
+    }
 }
 }
